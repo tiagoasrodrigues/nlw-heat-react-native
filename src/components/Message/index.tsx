@@ -1,12 +1,38 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
+import { UserPhoto } from '../UserPhoto';
 
 import { styles } from './styles';
 
-export function Message() {
-  return (
-    <View>
+export type MessageProps = {
+  id: string;
+  text: string;
+  user: {
+    name: string;
+    avatar_url: string;
+  }
+}
 
+type Props = {
+  data: MessageProps;
+}
+
+export function Message({ data }: Props) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.message}>
+        {data.text}
+      </Text>
+
+      <View style={styles.footer}>
+        <UserPhoto
+          imageUri={data.user.avatar_url}
+          sizes='NORMAL' />
+
+        <Text style={styles.userName}>
+          {data.user.name}
+        </Text>
+      </View>
     </View>
   );
 }
