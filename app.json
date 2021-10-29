@@ -3,6 +3,7 @@
     "name": "nlw-heat-react-native",
     "slug": "nlw-heat-react-native",
     "version": "1.0.0",
+    "scheme": "nlw-heat-react-native",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
